@@ -32,7 +32,7 @@ h1 {
   }
   
   .navbar {
-    background-color: #800000;
+    background-color: #e69fce;
   }
   
   .col-sm, .col-md {
@@ -70,42 +70,42 @@ h1 {
   }
   
   .icon-button {
-    background-color: #800000;
+    background-color: #d0e1b2;
     color: white;
   }
   
   .icon-button:hover {
-    box-shadow: 0 0 10px 0 #800000 inset, 0 0 30px 5px #800000;
+    box-shadow: 0 0 10px 0 #e4a7a7 inset, 0 0 30px 5px #9b3c3c;
     color: white;
   }
   
   .index-link {
-    color: #800000;
+    color: #36866c;
     text-decoration: none;
     font-weight: bold;
   }
   
   .index-link:hover {
-    color: #800000;
+    color: #e94f08;
     text-decoration: underline;
   }
   
   .maroon_text {
-    color: #800000;
+    color: #c30eec;
   }
   
   .unordered_no_bullets {
     list-style-type: none;
   }
   .navbar .dropdown-menu .dropdown-item {
-    background-color: #ffffff; /* Change to whatever color you prefer */
-    color: #333333; /* Adjust text color as needed */
+    background-color: #f0e5f3; /* Change to whatever color you prefer */
+    color: #050d64; /* Adjust text color as needed */
     }
 
     .navbar .dropdown-menu .dropdown-item:hover,
     .navbar .dropdown-menu .dropdown-item:focus {
-    background-color: #cccccc; /* Color for hover state */
-    color: #000000; /* Text color for hover state */
+    background-color: #ecf1b6; /* Color for hover state */
+    color: #5f146c; /* Text color for hover state */
 }
 
   .maroon_bar {
@@ -119,7 +119,7 @@ h1 {
   }
   
   .footer {
-    background-color: #767676;
+    background-color: #9342c9;
     width: 100%;
     position: absolute;
   }
