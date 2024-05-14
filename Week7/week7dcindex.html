@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Chalkboard 6</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/uchicago_format.css">
+    <style>
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+  <!--Nav Bar-->
+  <div id="nav-placeholder"></div>
+  <!--End Nav Bar-->
+
+<body>
+    <h1>DC:6 -- Home Sweet Home - Chengdu, China</h1>
+    <div id="map"></div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set view to Chengdu, China
+        var map = L.map('map').setView([30.572815, 104.066801], 13); // Chengdu coordinates
+
+        // Load and display tile layers on the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add a marker at the Tianfu Square location with a popup
+        var marker = L.marker([30.572815, 104.066801]).addTo(map)
+            .bindPopup('<b>Tianfu Square</b><br>A central landmark in Chengdu.');
+
+        // Add a circle to highlight the Chenghua district
+        var circle = L.circle([30.676292, 104.130104], {
+            color: 'blue',
+            fillColor: '#30f',
+            fillOpacity: 0.5,
+            radius: 3000
+        }).addTo(map).bindPopup('Chenghua District');
+
+        // Add a polygon to show a highlighted region
+        var polygon = L.polygon([
+            [30.676292, 104.130104],
+            [30.679292, 104.133104],
+            [30.682292, 104.130104]
+        ], {
+            color: 'green',
+            fillColor: '#0f0',
+            fillOpacity: 0.3
+        }).addTo(map).bindPopup('Polygon Area');
+
+    </script>
+    <!--Footer-->
+    <div id="footer-placeholder"></div>
+    <!--End Footer-->
+        
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../js/digital_chalkboard_6.js"></script>
+</body>
+</html>

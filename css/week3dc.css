@@ -1,0 +1,48 @@
+/* Table font */
+table {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Custom list styles */
+.a {
+    list-style-type: lower-roman;
+}
+
+.b {
+    list-style-type: lower-alpha;
+}
+
+.c {
+    list-style-type: square;
+}
+
+/* Targeting only the fourth list (unordered) for dollar sign bullets */
+.d {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0; /* Optional: Adjust padding if needed */
+}
+
+.d li::before {
+    content: "$ "; /* Dollar sign followed by a space */
+    padding-right: 10px; /* Adjust spacing between the dollar sign and list item text */
+}
+
+/* Anchor link styling */
+a.custom-link {
+    text-decoration: none;
+    color: #007bff; /* Bright blue, for example */
+}
+
+a.custom-link:visited {
+    color: #0056b3; /* Darker blue */
+}
+
+a.custom-link:hover {
+    color: #0056b3; /* Even darker on hover */
+}
+
+/* Styling the first letter of list items */
+li::first-letter {
+    font-size: larger;
+    font-weight: bold;
+}

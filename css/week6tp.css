@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.chart-container {
+    width: 40%;
+    margin: 15px;
+}

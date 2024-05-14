@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Presentation 6</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Play:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../css/uchicago_format.css">
+</head>
+<body>
+  <!--Nav Bar-->
+  <div id="nav-placeholder"></div>
+  <!--End Nav Bar-->
+    <div class="container mt-4">
+        <h1>OCHRE Items Overview</h1>
+        <div id="items-list" class="row"></div>
+    </div>
+    <script src="ochre.js"></script>
+    <script>
+        // List of items to display on the index page
+        const items = [
+            {
+                uuid: '6f18e3a7-a396-46d9-85cb-92674c24cfc0',
+                title: 'Item 1',
+                page: 'item1.html'
+            },
+            {
+                uuid: '50f7b9a5-329a-49ab-85e2-f8fb4ee6e867',
+                title: 'Item 2',
+                page: 'item2.html'
+            }
+        ];
+
+        /**
+         * Fetch and display item summaries on the index page
+         * @param {Array} items - List of item objects to be displayed
+         */
+        function loadItemsSummary(items) {
+            items.forEach(item => {
+                loadOchreSummary(item.uuid, item.title, item.page);
+            });
+        }
+
+        /**
+         * Fetches a summary of an item and displays it as a card
+         * @param {string} uuid - The UUID of the item to fetch
+         * @param {string} title - The fallback title for the item
+         * @param {string} page - The HTML page to link to
+         */
+        function loadOchreSummary(uuid, title, page) {
+            const url = `https://ochre.lib.uchicago.edu/ochre?uuid=${uuid}`;
+            fetch(url)
+                .then((response) => response.text())
+                .then((xmlString) => {
+                    // Parse XML to a DOM object
+                    const parser = new DOMParser();
+                    const xml = parser.parseFromString(xmlString, "application/xml");
+
+                    // Extract title and preview image
+                    const itemTitle = xml.querySelector("title")?.textContent || title;
+                    const previewImage = xml.querySelector("previewImage")?.getAttribute("src") || null;
+
+                    // Build the HTML for the card
+                    let html = `
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">${itemTitle}</h5>`;
+                    if (previewImage) {
+                        html += `<img src="https://ochre.lib.uchicago.edu${previewImage}" alt="${itemTitle}" class="img-fluid mb-3">`;
+                    }
+                    html += `
+                                    <a href="${page}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Append the card to the items list
+                    document.querySelector("#items-list").innerHTML += html;
+                })
+                .catch((error) => {
+                    console.error("Error fetching OCHRE data:", error);
+                });
+        }
+
+        // Load all items summaries
+        loadItemsSummary(items);
+    </script>
+    </div>
+    <!--Footer-->
+    <div id="footer-placeholder"></div>
+    <!--End Footer-->
+        
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../js/week7tp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

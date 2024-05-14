@@ -1,0 +1,26 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000;
+}
+
+.console {
+  font-family: 'Courier New', monospace;
+  color: #0f0;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li::before {
+  content: '> ';
+}
+
+li {
+  margin: 10px 0;
+}
