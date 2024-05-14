@@ -77,7 +77,7 @@ a.link:focus {
 }
 
 .icon-button:hover {
-  box-shadow: 0 0 10px 0 #e4a7a7 inset, 0 0 30px 5px #9b3c3c;
+  box-shadow: 0 0 10px 0 #e4a7a7 inset, 0 0 30px 5px #d1c53e;
   color: white;
 }
 
@@ -88,7 +88,7 @@ a.link:focus {
 }
 
 .index-link:hover {
-  color: #e94f08;
+  color: #d1c53e;
   text-decoration: underline;
 }
 
