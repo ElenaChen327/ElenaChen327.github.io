@@ -13,11 +13,11 @@ h2 {
 }
 
 p {
-  color: black;
+  color: rgb(66, 62, 62);
 }
 
 a.link {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   margin-right: 15px;
   margin-left: 0;
@@ -25,7 +25,7 @@ a.link {
 
 a.link:hover {
   font-weight: bold;
-  color: white;
+  color: #9342c9;
 }
 
 a.link:focus {
@@ -75,12 +75,12 @@ a.link:focus {
 
 .icon-button {
   background-color: #d0e1b2;
-  color: white;
+  color: rgb(0, 98, 156);
 }
 
 .icon-button:hover {
   box-shadow: 0 0 10px 0 #e4a7a7 inset, 0 0 30px 5px #d1c53e;
-  color: white;
+  color: rgb(0, 98, 156);
 }
 
 .index-link {
