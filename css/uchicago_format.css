@@ -5,7 +5,9 @@ h1 {
 h3 {
   color: #d992c1;
 }
-
+h4 {
+  color: #e69fce;
+}
 h2 {
   color: #c084ac;
 }
@@ -68,7 +70,7 @@ a.link:focus {
 .internal-container {
   padding: 20px;
   margin-top: 20px;
-  outline: 2px solid black;
+  outline: 2px solid rgb(181, 190, 118);
 }
 
 .icon-button {
@@ -130,6 +132,7 @@ a.link:focus {
 }
 
 .container-content {
+  padding: 20px;
   min-height: calc(100vh - 150px);
 }
 /*# sourceMappingURL=uchicago_format.css.map */
