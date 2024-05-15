@@ -1,12 +1,20 @@
 <footer class="footer">
     <div class="container p-4 pb-0">
-        <div class="row">
-            <h2>Elena Chen 
-                <a href="mailto: elena.chen20000327@gmail.com" class="btn btn-lg icon-button" 
-                role="button" aria-pressed="true"><i class="bi bi-envelope custom-icon"></i></a>
-                <a href="https://www.linkedin.com/in/zhiyi-elena-chen-b2a2631bb/" class="btn btn-lg icon-button" 
-                role="button" aria-pressed="true"><i class="bi bi-linkedin custom-icon"></i></a>
-            </h2>
+        <div class="row align-items-center">
+            <div class="col text-left">
+                <h2>Elena Chen</h2>
+                <h4>1616 E 56th St</h4>
+                <h4>Chicago, IL 60637</h4>
+                <h4>United States</h4>
+            </div>
+            <div class="col text-right">
+                <div class="ml-auto">
+                    <a href="mailto: elena.chen20000327@gmail.com" class="btn btn-lg icon-button" 
+                    role="button" aria-pressed="true"><i class="bi bi-envelope custom-icon"></i></a>
+                    <a href="https://www.linkedin.com/in/zhiyi-elena-chen-b2a2631bb/" class="btn btn-lg icon-button" 
+                    role="button" aria-pressed="true"><i class="bi bi-linkedin custom-icon"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
@@ -15,10 +23,24 @@
 .custom-icon {
     font-size: 2rem;
     color: #0073b1;
+    margin-left: 0px; /* Space between icons */
     transition: transform 0.3s; /* Smooth transition */
 }
 
 .custom-icon:hover {
     transform: rotate(360deg); /* Rotate on hover */
+}
+
+
+.text-left {
+    text-align: left !important; /* Force left alignment */
+}
+
+.text-right {
+    text-align: right !important; /* Force right alignment */
+}
+
+.ml-auto {
+    margin-left: auto !important; /* Push content to the right */
 }
 </style>
